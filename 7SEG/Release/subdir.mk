@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../7SEG_Program.c \
 ../DIO_Program.c \
 ../main.c 
 
 OBJS += \
+./7SEG_Program.o \
 ./DIO_Program.o \
 ./main.o 
 
 C_DEPS += \
+./7SEG_Program.d \
 ./DIO_Program.d \
 ./main.d 
 

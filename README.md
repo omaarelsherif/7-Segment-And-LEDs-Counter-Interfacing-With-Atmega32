@@ -30,6 +30,10 @@ The project is structured as follows:
   * DIO_Program.c: The source code for the DIO driver functions.
   * DIO_Interface.h: The interface (header) file for the DIO driver.
   * DIO_Private.h: Private declarations for the DIO driver.
+* 7 Segment Driver:
+  * 7SEG_Program.c: The source code for the 7SEG driver functions.
+  * 7SEG_Interface.h: The interface (header) file for the 7SEG driver.
+  * 7SEG_Private.h: Private declarations for the 7SEG driver.
 
 <!-- GETTING STARTED -->
 ## <br>**➲ Getting Started**
