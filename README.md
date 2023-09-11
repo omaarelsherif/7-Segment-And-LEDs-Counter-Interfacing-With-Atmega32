@@ -13,12 +13,12 @@ This project demonstrates how to interface a common cathode 7-segment display (s
 
 <!-- SOFTWARE REQUIREMENTS -->
 ## <br>**➲ Software Requirements**
-* <a href="https://www.microchip.com/en-us/education/developer-help/learn-tools-software/mcu-mpu/studio" target="_blank">Microship Studio</a> 
+* <a href="https://www.eclipse.org/downloads/packages/release/2023-06/r/eclipse-ide-cc-developers" target="_blank">Eclipse IDE</a> 
 * <a href="https://www.labcenter.com/downloads/" target="_blank">Proteus</a> 
 * <a href="https://sourceforge.net/projects/winavr/" target="_blank">WinAVR</a> 
 * <a href="https://www.fischl.de/usbasp/" target="_blank">USBASP driver</a> 
 
-**NOTE:** you can install another simulation program like multisim and another IDE like VS code with external compiler, anything can work all you need is to compile the project to generate hex file.
+**NOTE:** you can install another simulation program like multisim and another IDE like Microship studio or VS code with external compiler, anything can work all you need is to compile the project to generate hex file.
 
 <!-- PROJECT STRUCTURE -->
 ## <br>**➲ Project Structure**
