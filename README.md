@@ -37,7 +37,7 @@ The project is structured as follows:
    * Connect the 7-segment display to Port C of the ATmega32 microcontroller, and connect the 8 LEDs to Port D. 
 
 2. **Software Setup:**
-* Install Microchip Studio on your computer.
+* Install Eclipse IDE on your computer.
 * Set up Proteus for simulation.
 * Install the USBASP Programmer software and ensure your programmer is connected.
 3. **Clone the Repository:**
@@ -45,7 +45,7 @@ The project is structured as follows:
 git clone https://github.com/omaarelsherif/7-Segment-Display-With-LEDs-Counter-Using-Atmega32.git
 ```
 4. **Build the project:**
-   * Build the project using Microship Studio or any another IDE
+   * Build the project using Eclipse IDE or any another IDE
    * Use the USBASP Programmer to flash the ATmega32 with the generated hex file.
 5. Run the Simulation:
    * If you want to simulate the project, open it in Proteus and run the simulation.
