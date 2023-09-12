@@ -1,7 +1,16 @@
+/*
+*    7SEG_Program.c
+*    Name : Omar Elsherif
+*    Version: 1.0
+*    Date: 9-9-2023
+*    Desc: Code file contains the code for 7-segment driver 
+*/
+
+// Include header files
 #include "STD_TYPES.h"
-#include "7SEG_Private.h"
-#include "DIO_Interface.h"
+#include "7SEG_Config.h"
 #include "7SEG_Interface.h"
+#include "DIO_Interface.h"
 #include <avr/delay.h>
 
 // Create array to represent numbers to be displayed in 7 segment

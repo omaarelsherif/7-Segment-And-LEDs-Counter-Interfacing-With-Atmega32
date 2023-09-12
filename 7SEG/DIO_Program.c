@@ -1,6 +1,15 @@
+/*
+*    DIO_Program.c
+*    Name : Omar Elsherif
+*    Version: 1.0
+*    Date: 8-9-2023
+*    Desc: Code file contains the code for DIO driver 
+*/
+
+// Include header files
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
-#include "DIO_Private.h"
+#include "DIO_Register.h"
 
 // Function to set pin direction
 void DIO_VoidSetPinDirection(u8 Port, u8 Pin, u8 Dir)

@@ -1,3 +1,11 @@
+/*
+*    DIO_Interface.h
+*    Name : Omar Elsherif
+*    Version: 1.0
+*    Date: 8-9-2023
+*    Desc: Header file contains functions prototypes for DIO driver 
+*/
+
 #ifndef DIO_INTERFACE_H
 #define DIO_INTERFACE_H
 
