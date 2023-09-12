@@ -1,5 +1,5 @@
-#ifndef _DIO_PRIVATE_H_
-#define _DIO_PRIVATE_H_
+#ifndef DIO_PRIVATE_H
+#define DIO_PRIVATE_H
 
 #include "STD_TYPES.h"
 
