@@ -46,7 +46,7 @@ The project is structured as follows:
 * Install the USBASP Programmer software and ensure your programmer is connected.
 3. **Clone the Repository:**
 ```sh
-git clone https://github.com/omaarelsherif/7-Segment-Display-With-LEDs-Counter-Using-Atmega32.git
+git clone https://github.com/omaarelsherif/7-Segment-Interfacing-With-LEDs-Counter-Using-Atmega32.git
 ```
 4. **Build the project:**
    * Build the project using Eclipse IDE or any another IDE
