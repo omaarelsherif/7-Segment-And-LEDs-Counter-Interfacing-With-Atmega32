@@ -1,5 +1,5 @@
 <!-- PROJECT TITLE -->
-<h1 align="center">7 Segment Display With LEDs Counter Using Atmega32</h1>
+<h1 align="center">7 Segment Interfacing With LEDs Counter Using Atmega32</h1>
 
 <!-- OVERVIEW -->
 ## <br>**➲ Overview**
