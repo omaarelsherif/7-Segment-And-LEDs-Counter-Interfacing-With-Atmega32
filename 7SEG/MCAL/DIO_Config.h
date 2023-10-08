@@ -15,7 +15,7 @@
 #define INPUT	0x0
 #define OUTPUT	0xFF
 
-// Macros to define values for ports and pins
+// Macros to define values for ports and pins 
 #define PORT_A	1
 #define PORT_B	2
 #define PORT_C	3
