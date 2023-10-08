@@ -9,17 +9,8 @@
 #ifndef _7SEG_CONFIG_H_
 #define _7SEG_CONFIG_H_
 
-// Macros to define directions and states(low/high)
-#define LOW		0
-#define HIGH	1
-#define INPUT	0x0
-#define OUTPUT	0xFF
-
-// Macros to define values for ports
-#define PORT_A	1
-#define PORT_B	2
-#define PORT_C	3
-#define PORT_D	4
+// Include DIO configurations
+#include "../MCAL/DIO_Config.h"
 
 // Macros to represent ports
 #define SEG_PORT PORT_C
