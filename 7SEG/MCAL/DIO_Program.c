@@ -123,7 +123,7 @@ void DIO_VoidSetPortDirection(u8 Port, u8 Direction)
 }
 
 // Function to set port high nibble direction
-void DIO_VoidSetPortHighNibbleValue(u8 Port , u8 Direction)
+void DIO_VoidSetPortHighNibbleDirection(u8 Port , u8 Direction)
 {
     switch (Port)
     {
@@ -171,7 +171,7 @@ void DIO_VoidSetPortHighNibbleValue(u8 Port , u8 Direction)
 }
 
 // Function to set port low nibble direction
-void DIO_VoidSetPortLowNibbleValue(u8 Port , u8 Direction)
+void DIO_VoidSetPortLowNibbleDirection(u8 Port , u8 Direction)
 {
     switch (Port)
     {
@@ -215,5 +215,30 @@ void DIO_VoidSetPortLowNibbleValue(u8 Port , u8 Direction)
                 SET_LOW_NIBB(DDRD);
             }
             break;
+    }
+}
+
+// Function to set port low nibble value
+void DIO_VoidSetPortHighNibbleValue(u8 Port , u8 Value)
+{
+    // Switch port 
+    switch (Port)
+    {
+        case PORT_A: ASS_HIGH_NIBB(PORTA, Value); break;
+        case PORT_B: ASS_HIGH_NIBB(PORTB, Value); break;
+        case PORT_C: ASS_HIGH_NIBB(PORTC, Value); break;
+        case PORT_D: ASS_HIGH_NIBB(PORTD, Value); break;
+    }
+}
+
+void DIO_VoidSetPortLowNibbleValue(u8 Port , u8 Value)
+{
+    // Switch port 
+    switch (Port)
+    {
+        case PORT_A: ASS_LOW_NIBB(PORTA, Value); break;
+        case PORT_B: ASS_LOW_NIBB(PORTB, Value); break;
+        case PORT_C: ASS_LOW_NIBB(PORTC, Value); break;
+        case PORT_D: ASS_LOW_NIBB(PORTD, Value); break;
     }
 }
