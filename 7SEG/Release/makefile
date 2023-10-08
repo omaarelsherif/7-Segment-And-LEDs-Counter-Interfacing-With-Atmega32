@@ -8,6 +8,8 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include MCAL/subdir.mk
+-include HAL/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -34,6 +36,9 @@ LSS += \
 
 FLASH_IMAGE += \
 7SEG.hex \
+
+EEPROM_IMAGE += \
+7SEG.eep \
 
 SIZEDUMMY += \
 sizedummy \
@@ -62,6 +67,12 @@ all: 7SEG.elf secondary-outputs
 	@echo 'Finished building: $@'
 	@echo ' '
 
+7SEG.eep: 7SEG.elf
+	@echo 'Create eeprom image (ihex format)'
+	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex 7SEG.elf  "7SEG.eep"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 sizedummy: 7SEG.elf
 	@echo 'Invoking: Print Size'
 	-avr-size --format=avr --mcu=atmega32 7SEG.elf
@@ -70,10 +81,10 @@ sizedummy: 7SEG.elf
 
 # Other Targets
 clean:
-	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) 7SEG.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(EEPROM_IMAGE)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) 7SEG.elf
 	-@echo ' '
 
-secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)
+secondary-outputs: $(LSS) $(FLASH_IMAGE) $(EEPROM_IMAGE) $(SIZEDUMMY)
 
 .PHONY: all clean dependents
 .SECONDARY:

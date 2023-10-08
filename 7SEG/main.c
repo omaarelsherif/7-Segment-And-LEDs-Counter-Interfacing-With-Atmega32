@@ -4,7 +4,7 @@
  */
 
 // Include libraries
-#include "7SEG_Interface.h"
+#include "HAL/7SEG_Interface.h"
 
 // Main function
 void main(void)

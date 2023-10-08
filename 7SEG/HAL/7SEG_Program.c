@@ -7,10 +7,11 @@
 */
 
 // Include header files
-#include "STD_TYPES.h"
+#include "../LIB/STD_TYPES.h"
+#include "../LIB/BIT_MATH.h"
+#include "../MCAL/DIO_Interface.h"
 #include "7SEG_Config.h"
 #include "7SEG_Interface.h"
-#include "DIO_Interface.h"
 #include <avr/delay.h>
 
 // Create array to represent numbers to be displayed in 7 segment
@@ -20,17 +21,17 @@ static u8 Numbers[10] = {ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, N
 void SEG_VoidDisplaySeg(u8 Number)
 {
 	// Set DDR of segment port as output
-	DIO_VoidSetPortDirection(SEG_PORT, 1);
+	DIO_VoidSetPortDirection(SEG_PORT, 255);
 
 	// Display the number in the
-	DIO_VoidSetPortValue(SEG_PORT, Number);
+	DIO_VoidSetPortValue(SEG_PORT, Numbers[Number]);
 }
 
 // Function to count numbers in 7 segment and indicate count with leds
 void SEG_VoidCountSeg(void)
 {
 	// Initialize Data Direction Register (DDR) for portc
-	DIO_VoidSetPortDirection(SEG_PORT, 0b11111111);
+	DIO_VoidSetPortDirection(SEG_PORT, OUTPUT);
 
 	// Initialize Data Direction Register (DDR) for portd
 	DIO_VoidSetPortDirection(LED_PORT, 0b11111111);
@@ -44,20 +45,20 @@ void SEG_VoidCountSeg(void)
 		// Loop and display values from n1 to n2 in 7 segement
 		for(int i=0; i<=9; i++)
 		{
-			// Display nimber in the 7 segment
+			// Display number in the 7 segment
 			DIO_VoidSetPortValue(SEG_PORT, Numbers[i]);
 
-			// turn on leds
-			DIO_VoidSetPortValue(LED_PORT, led);
-			if(i<=8)
+			// Turn on leds
+			if(i > 0)
 			{
-				led |= (1 << i);
+				SET_BIT(led, i-1);
 			}
-			else
+			DIO_VoidSetPortValue(LED_PORT, led);
+			if(i == 9)
 			{
 				DIO_VoidSetPortValue(LED_PORT, 0);
 			}
-			_delay_ms(1000);
+			_delay_ms(750);
 		}
 
 		// Reset led counter
